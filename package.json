@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:reset": "node seeder.js down --to=0 && node migrator.js down --to=0 && node migrator.js up",
+    "db:reset:seed": "npm run db:reset && node seeder.js up"
   },
   "author": "",
   "license": "ISC",
