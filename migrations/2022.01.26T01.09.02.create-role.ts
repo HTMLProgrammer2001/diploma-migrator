@@ -1,5 +1,5 @@
 import {Migration} from '../umzug';
-import Sequelize, {DataTypes} from 'sequelize';
+import {DataTypes, Sequelize} from 'sequelize';
 
 export const up: Migration = async ({context: sequelize}) => {
   await sequelize.getQueryInterface().createTable('Roles', {
