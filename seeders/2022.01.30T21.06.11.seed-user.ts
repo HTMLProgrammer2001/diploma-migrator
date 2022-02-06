@@ -15,5 +15,5 @@ export const up: Migration = async ({context: sequelize}) => {
 };
 
 export const down: Migration = async ({context: sequelize}) => {
-  await sequelize.getQueryInterface().bulkDelete('User', {id: data.map(el => el.id)});
+  await sequelize.getQueryInterface().bulkDelete('User', {});
 };
