@@ -1,5 +1,5 @@
-import { Umzug, SequelizeStorage } from 'umzug';
-import { Sequelize } from 'sequelize';
+import {SequelizeStorage, Umzug} from 'umzug';
+import {Sequelize} from 'sequelize';
 
 const sequelize = new Sequelize({
   dialect: 'mysql',
@@ -12,7 +12,7 @@ const sequelize = new Sequelize({
 
 export const migrator = new Umzug({
   migrations: {
-    glob: ['migrations/*.ts', { cwd: __dirname }],
+    glob: ['migrations/*.ts', {cwd: __dirname}],
   },
   context: sequelize,
   storage: new SequelizeStorage({sequelize}),
@@ -23,7 +23,7 @@ export type Migration = typeof migrator._types.migration;
 
 export const seeder = new Umzug({
   migrations: {
-    glob: ['seeders/*.ts', { cwd: __dirname }],
+    glob: ['seeders/*.ts', {cwd: __dirname}],
   },
   context: sequelize,
   storage: new SequelizeStorage({
