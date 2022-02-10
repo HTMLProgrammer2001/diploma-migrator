@@ -9,6 +9,14 @@ const data = [
     roleId: 1,
     passwordHash: '$2b$10$CtLZW0wAY5nv1D72dv5w/uQxPYVMpUqofZORTa.tZ0yLbQgy.pY1u'
   },
+  {
+    id: 2,
+    fullName: 'Test',
+    email: 'test@gmail.com',
+    phone: '+380666376892',
+    roleId: 1,
+    passwordHash: '$2b$10$CtLZW0wAY5nv1D72dv5w/uQxPYVMpUqofZORTa.tZ0yLbQgy.pY1u'
+  },
 ];
 
 export const up: Migration = async ({context: sequelize}) => {

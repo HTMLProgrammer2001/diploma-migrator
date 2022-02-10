@@ -6,7 +6,7 @@ export const up: Migration = async ({context: sequelize}) => {
     id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
     fullName: {type: DataTypes.STRING, allowNull: false},
     email: {type: DataTypes.STRING, allowNull: false},
-    birthday: {type: DataTypes.DATEONLY, allowNull: true},
+    birthday: {type: DataTypes.DATE, allowNull: true},
     phone: {type: DataTypes.STRING, allowNull: true},
     address: {type: DataTypes.STRING, allowNull: true},
     avatarUrl: {type: DataTypes.STRING, allowNull: true},
@@ -15,7 +15,7 @@ export const up: Migration = async ({context: sequelize}) => {
     teacherRankId: {type: DataTypes.INTEGER, allowNull: true, references: {model: 'TeachingRank', key: 'id'}},
     academicDegreeId: {type: DataTypes.INTEGER, allowNull: true, references: {model: 'AcademicDegree', key: 'id'}},
     academicTitleId: {type: DataTypes.INTEGER, allowNull: true, references: {model: 'AcademicTitle', key: 'id'}},
-    workStartDate: {type: DataTypes.DATEONLY, allowNull: true},
+    workStartDate: {type: DataTypes.DATE, allowNull: true},
     isDeleted: {type: DataTypes.BOOLEAN, defaultValue: false},
     guid: {type: DataTypes.STRING, defaultValue: Sequelize.fn('UUID')}
   });
