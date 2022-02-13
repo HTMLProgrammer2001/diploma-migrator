@@ -5,9 +5,9 @@ export const up: Migration = async ({context: sequelize}) => {
   await sequelize.getQueryInterface().createTable('Teacher', {
     id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
     fullName: {type: DataTypes.STRING, allowNull: false},
-    email: {type: DataTypes.STRING, allowNull: false},
+    email: {type: DataTypes.STRING, allowNull: false, unique: true},
     birthday: {type: DataTypes.DATE, allowNull: true},
-    phone: {type: DataTypes.STRING, allowNull: true},
+    phone: {type: DataTypes.STRING, allowNull: true, unique: true},
     address: {type: DataTypes.STRING, allowNull: true},
     avatarUrl: {type: DataTypes.STRING, allowNull: true},
     departmentId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'Departments', key: 'id'}},

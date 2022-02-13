@@ -2,16 +2,13 @@ import {Migration} from '../umzug';
 import {DataTypes, Sequelize} from 'sequelize';
 
 export const up: Migration = async ({context: sequelize}) => {
-  await sequelize.getQueryInterface().createTable('Internship', {
+  await sequelize.getQueryInterface().createTable('Education', {
     id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
     userId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'User', key: 'id'}},
-    title: {type: DataTypes.STRING, allowNull: false},
-    code: {type: DataTypes.STRING, allowNull: false, unique: true},
-    from: {type: DataTypes.DATE, allowNull: false},
-    to: {type: DataTypes.DATE, allowNull: false},
-    place: {type: DataTypes.STRING, allowNull: true},
-    hours: {type: DataTypes.INTEGER, allowNull: false},
-    credits: {type: DataTypes.INTEGER, allowNull: false, defaultValue: 0},
+    educationQualificationId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'EducationQualification', key: 'id'}},
+    institution: {type: DataTypes.STRING, allowNull: false},
+    speciality: {type: DataTypes.STRING, allowNull: false},
+    yearOfIssue: {type: DataTypes.INTEGER, allowNull: false},
     description: {type: DataTypes.STRING, allowNull: true},
     isDeleted: {type: DataTypes.BOOLEAN, defaultValue: false},
     guid: {type: DataTypes.STRING, defaultValue: Sequelize.fn('UUID')}
@@ -19,5 +16,5 @@ export const up: Migration = async ({context: sequelize}) => {
 };
 
 export const down: Migration = async ({context: sequelize}) => {
-  await sequelize.getQueryInterface().dropTable('Internship');
+  await sequelize.getQueryInterface().dropTable('Education');
 };

@@ -6,9 +6,9 @@ export const up: Migration = async ({context: sequelize}) => {
     id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
     fullName: {type: DataTypes.STRING, allowNull: false},
     roleId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'Roles', key: 'id'}},
-    email: {type: DataTypes.STRING, allowNull: false},
+    email: {type: DataTypes.STRING, allowNull: false, unique: true},
     passwordHash: {type: DataTypes.STRING, allowNull: false},
-    phone: {type: DataTypes.STRING, allowNull: true},
+    phone: {type: DataTypes.STRING, allowNull: true, unique: true},
     avatarUrl: {type: DataTypes.STRING, allowNull: true},
     isDeleted: {type: DataTypes.BOOLEAN, defaultValue: false},
     guid: {type: DataTypes.STRING, defaultValue: Sequelize.fn('UUID')}

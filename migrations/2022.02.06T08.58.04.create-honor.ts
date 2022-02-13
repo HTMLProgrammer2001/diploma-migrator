@@ -7,7 +7,7 @@ export const up: Migration = async ({context: sequelize}) => {
     userId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'User', key: 'id'}},
     title: {type: DataTypes.STRING, allowNull: false},
     date: {type: DataTypes.DATE, allowNull: false},
-    orderNumber: {type: DataTypes.STRING, allowNull: true},
+    orderNumber: {type: DataTypes.STRING, allowNull: true, unique: true},
     description: {type: DataTypes.STRING, allowNull: true},
     isActive: {type: DataTypes.BOOLEAN, defaultValue: true},
     isDeleted: {type: DataTypes.BOOLEAN, defaultValue: false},
