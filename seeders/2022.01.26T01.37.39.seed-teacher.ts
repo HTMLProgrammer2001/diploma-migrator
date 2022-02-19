@@ -7,7 +7,7 @@ const data = [
   },
   {
     id: 2, fullName: 'Ира учитель', email: 'test@gmail.com',
-    birthday: '2000-02-21', phone: '+380666876893', departmentId: 1, commissionId: 1, teacherRankId: 1
+    birthday: '2000-02-21', phone: '+380666876893', departmentId: 1, commissionId: 2, teacherRankId: 1
   },
 ];
 

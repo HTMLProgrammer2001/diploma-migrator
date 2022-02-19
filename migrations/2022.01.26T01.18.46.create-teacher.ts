@@ -17,7 +17,7 @@ export const up: Migration = async ({context: sequelize}) => {
     academicTitleId: {type: DataTypes.INTEGER, allowNull: true, references: {model: 'AcademicTitle', key: 'id'}, onDelete: 'CASCADE'},
     workStartDate: {type: DataTypes.DATE, allowNull: true},
     isDeleted: {type: DataTypes.BOOLEAN, defaultValue: false},
-    isCascadeDelete: {type: DataTypes.BOOLEAN, defaultValue: false},
+    cascadeDeletedBy: {type: DataTypes.STRING, allowNull: true},
     guid: {type: DataTypes.STRING, defaultValue: Sequelize.fn('UUID')}
   });
 };
