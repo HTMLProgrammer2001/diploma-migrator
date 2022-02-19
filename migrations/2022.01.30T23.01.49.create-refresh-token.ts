@@ -4,7 +4,7 @@ import {DataTypes, Sequelize} from 'sequelize';
 export const up: Migration = async ({context: sequelize}) => {
   await sequelize.getQueryInterface().createTable('RefreshToken', {
     sessionCode: {type: DataTypes.STRING, allowNull: false, primaryKey: true, unique: true},
-    userId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'User', key: 'id'}},
+    userId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'User', key: 'id'}, onDelete: 'CASCADE'},
     creationTime: {type: DataTypes.DATE, defaultValue: Sequelize.fn('now')},
     expirationTime: {type: DataTypes.DATE}
   });

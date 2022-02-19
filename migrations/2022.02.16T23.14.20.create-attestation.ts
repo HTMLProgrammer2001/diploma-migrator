@@ -4,11 +4,12 @@ import {DataTypes, Sequelize} from 'sequelize';
 export const up: Migration = async ({context: sequelize}) => {
   await sequelize.getQueryInterface().createTable('Attestation', {
     id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
-    categoryId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'Category', key: 'id'}},
-    userId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'User', key: 'id'}},
+    categoryId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'Category', key: 'id'}, onDelete: 'CASCADE'},
+    teacherId: {type: DataTypes.INTEGER, allowNull: false, references: {model: 'Teacher', key: 'id'}, onDelete: 'CASCADE'},
     date: {type: DataTypes.DATE, allowNull: false},
     description: {type: DataTypes.STRING, allowNull: true},
     isDeleted: {type: DataTypes.BOOLEAN, defaultValue: false},
+    isCascadeDelete: {type: DataTypes.BOOLEAN, defaultValue: false},
     guid: {type: DataTypes.STRING, unique: true, defaultValue: Sequelize.fn('UUID')}
   });
 };

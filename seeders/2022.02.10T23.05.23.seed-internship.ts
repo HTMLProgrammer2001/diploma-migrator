@@ -3,7 +3,7 @@ import {Migration} from '../umzug';
 const data = [
   {
     id: 1,
-    userId: 1,
+    teacherId: 1,
     title: 'Internship',
     code: 'code',
     from: '2020-03-03',
