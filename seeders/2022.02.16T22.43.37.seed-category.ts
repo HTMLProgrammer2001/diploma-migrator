@@ -8,9 +8,9 @@ const data = [
 ];
 
 export const up: Migration = async ({context: sequelize}) => {
-  await sequelize.getQueryInterface().bulkInsert('Categories', data);
+  await sequelize.getQueryInterface().bulkInsert('Category', data);
 };
 
 export const down: Migration = async ({context: sequelize}) => {
-  await sequelize.getQueryInterface().bulkDelete('Categories', {});
+  await sequelize.getQueryInterface().bulkDelete('Category', {});
 };
