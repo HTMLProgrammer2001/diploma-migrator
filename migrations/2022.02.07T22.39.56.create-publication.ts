@@ -6,10 +6,10 @@ export const up: Migration = async ({context: sequelize}) => {
     id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
     title: {type: DataTypes.STRING, allowNull: false},
     publisher: {type: DataTypes.STRING, allowNull: true},
-    url: {type: DataTypes.STRING, allowNull: true},
+    url: {type: DataTypes.TEXT, allowNull: true},
     date: {type: DataTypes.DATE, allowNull: false},
     anotherAuthors: {type: DataTypes.STRING, allowNull: true},
-    description: {type: DataTypes.STRING, allowNull: true},
+    description: {type: DataTypes.TEXT, allowNull: true},
     isDeleted: {type: DataTypes.BOOLEAN, defaultValue: false},
     guid: {type: DataTypes.STRING, defaultValue: Sequelize.fn('UUID')}
   });

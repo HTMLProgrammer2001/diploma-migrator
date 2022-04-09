@@ -9,7 +9,7 @@ export const up: Migration = async ({context: sequelize}) => {
     institution: {type: DataTypes.STRING, allowNull: false},
     speciality: {type: DataTypes.STRING, allowNull: false},
     yearOfIssue: {type: DataTypes.INTEGER, allowNull: false},
-    description: {type: DataTypes.STRING, allowNull: true},
+    description: {type: DataTypes.TEXT, allowNull: true},
     isDeleted: {type: DataTypes.BOOLEAN, defaultValue: false},
     cascadeDeletedBy: {type: DataTypes.STRING, allowNull: true},
     guid: {type: DataTypes.STRING, defaultValue: Sequelize.fn('UUID')}

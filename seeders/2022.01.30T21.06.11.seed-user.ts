@@ -7,7 +7,7 @@ const data = [
     email: 'cssuperpy@gmail.com',
     phone: '+380666876892',
     roleId: 1,
-    passwordHash: '$2b$10$CtLZW0wAY5nv1D72dv5w/uQxPYVMpUqofZORTa.tZ0yLbQgy.pY1u'
+    passwordHash: '$2b$10$msBRTvVYHbLPuUnf3ZjYsOkkT8Yddob2PMT6pejsvT/3Y5aCYD6nK'
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const data = [
     email: 'test@gmail.com',
     phone: '+380666376892',
     roleId: 1,
-    passwordHash: '$2b$10$CtLZW0wAY5nv1D72dv5w/uQxPYVMpUqofZORTa.tZ0yLbQgy.pY1u'
+    passwordHash: '$2b$10$msBRTvVYHbLPuUnf3ZjYsOkkT8Yddob2PMT6pejsvT/3Y5aCYD6nK'
   },
 ];
 

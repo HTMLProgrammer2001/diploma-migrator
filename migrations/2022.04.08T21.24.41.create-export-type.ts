@@ -2,12 +2,12 @@ import {Migration} from '../umzug';
 import {DataTypes} from 'sequelize';
 
 export const up: Migration = async ({context: sequelize}) => {
-  await sequelize.getQueryInterface().createTable('ImportType', {
+  await sequelize.getQueryInterface().createTable('ExportType', {
     id: {type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true},
     name: {type: DataTypes.STRING, allowNull: false}
   });
 };
 
 export const down: Migration = async ({context: sequelize}) => {
-  await sequelize.getQueryInterface().dropTable('ImportType');
+  await sequelize.getQueryInterface().dropTable('ExportType');
 };

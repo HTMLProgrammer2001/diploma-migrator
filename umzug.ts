@@ -9,6 +9,14 @@ const sequelize = new Sequelize({
   password: 'root',
   database: 'app'
 });
+// const sequelize = new Sequelize({
+//   dialect: 'postgres',
+//   host: 'localhost',
+//   port: 5432,
+//   username: 'postgres',
+//   password: 'root',
+//   database: 'app'
+// });
 
 export const migrator = new Umzug({
   migrations: {
